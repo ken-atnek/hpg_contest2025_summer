@@ -39,13 +39,12 @@ $articleMaxWidth: 114rem;
     font-family: FuturaCyrillicDemi;
     src: url("./fonts/FuturaCyrillicDemi.woff2") format("woff2");
 }
-
 @mixin FuturaCyrillicBook {
-    font-family: "FuturaCyrillicBook", sans-serif;
+    font-family: FuturaCyrillicBook, sans-serif;
     font-weight: 400;
 }
 @mixin FuturaCyrillicDemi {
-    font-family: "FuturaCyrillicDemi", sans-serif;
+    font-family: FuturaCyrillicDemi, sans-serif;
     font-weight: 400;
 }
 

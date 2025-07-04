@@ -17,6 +17,7 @@ const blackTextShops = [
   '神戸ホットポイント',
   'クラブダンディ',
   '福岡ホットポイント',
+  '京都ホットポイント',
 ];
 
 export default function RankingCard({ item }: { item: RankingItem }) {

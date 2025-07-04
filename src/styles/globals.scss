@@ -23,7 +23,6 @@ body {
     @include sp {
         font-size: 3.6vw;
     }
-
     &::before,
     &::after {
         content: "";
@@ -34,7 +33,7 @@ body {
         aspect-ratio: 1366/893;
     }
     &::before {
-        background: url(../assets/images/header-bg.webp) no-repeat center
+        background: url("../assets/images/header-bg.webp") no-repeat center
             center / contain;
     }
     &::after {

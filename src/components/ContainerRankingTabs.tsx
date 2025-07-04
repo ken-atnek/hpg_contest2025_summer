@@ -8,17 +8,26 @@
 'use client';
 import styles from '@/styles/top.module.scss';
 import RankingCard from '@/components/RankingCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { rankingData } from '@/data/rankingData';
 
 const stages = [
-  { id: 'first', label: '1', text: 'st', textPeriod: 'ファーストステージ' },
+  {
+    id: 'first',
+    label: '1',
+    text: 'st',
+    period: '7/1-10',
+
+    textPeriod: '開催',
+    disabled: false,
+  },
   {
     id: 'second',
     label: '2',
     text: 'nd',
     period: '7/11-20',
     textPeriod: '開催',
+    disabled: true,
   },
   {
     id: 'third',
@@ -26,6 +35,7 @@ const stages = [
     text: 'rd',
     period: '7/21-31',
     textPeriod: '開催',
+    disabled: true,
   },
   {
     id: 'fourth',
@@ -33,23 +43,44 @@ const stages = [
     text: 'th',
     period: '8/1-10',
     textPeriod: '開催',
+    disabled: true,
   },
-  { id: 'final', label: 'FINAL', period: '8/11-31', textPeriod: '開催' },
+  {
+    id: 'final',
+    label: 'FINAL',
+    period: '8/11-31',
+    textPeriod: '開催',
+    disabled: true,
+  },
 ];
 
 export default function ContainerRankingTabs() {
   const [activeStage, setActiveStage] = useState('first');
   const items = rankingData[activeStage] ?? [];
 
-  // 👇ここでまとめてフィルタ用関数を定義
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const isMobile = windowWidth !== null && windowWidth <= 480;
+
   const filterRanks = (min: number, max: number) =>
     items.filter((item) => item.rank >= min && item.rank <= max);
 
-  // 👇ここで使う
+  const middleMaxRank = isMobile ? 6 : 7;
+  const bottomMinRank = isMobile ? 7 : 8;
+  const bottomMaxRank = isMobile ? 16 : 16;
+  const underMinRank = isMobile ? 17 : 17;
+
   const topRankItems = filterRanks(1, 1);
-  const middleRankItems = filterRanks(2, 7);
-  const bottomRankItems = filterRanks(8, 16);
-  const underRankItems = filterRanks(17, 20);
+  const middleRankItems = filterRanks(2, middleMaxRank);
+  const bottomRankItems = filterRanks(bottomMinRank, bottomMaxRank);
+  const underRankItems = filterRanks(underMinRank, 20);
   return (
     <section className={styles.containerRankingTabs}>
       <nav className={styles.tabs}>
@@ -59,14 +90,18 @@ export default function ContainerRankingTabs() {
               key={stage.id}
               className={activeStage === stage.id ? styles.active : ''}
             >
-              <button onClick={() => setActiveStage(stage.id)}>
+              <button
+                onClick={() => setActiveStage(stage.id)}
+                disabled={stage.disabled}
+                className={`${styles.button} ${stage.disabled ? styles.disabled : ''}`}
+              >
                 <div className={styles.wrapHead}>
                   {stage.label}
                   <span> {stage.text}</span>
                 </div>
                 <div className={styles.wrapFoot}>
-                  <span> {stage.period}</span>
-                  {stage.textPeriod}
+                  <span>{stage.period}</span>
+                  <i>{stage.textPeriod}</i>
                 </div>
               </button>
             </li>
