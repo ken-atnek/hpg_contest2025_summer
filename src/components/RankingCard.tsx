@@ -12,15 +12,40 @@ import Image from 'next/image';
 import ExternalLink from '@/components/common/ExternalLink';
 import { stores } from '@/data/storeData';
 import { areas } from '@/data/areaData';
-
+import { useEffect, useState } from 'react';
 const blackTextShops = [
   '神戸ホットポイント',
   'クラブダンディ',
   '福岡ホットポイント',
   '京都ホットポイント',
+  'ホットポイントパート2',
+  '熊本ホットポイントヴィラ',
 ];
 
 export default function RankingCard({ item }: { item: RankingItem }) {
+  // ユーザーエージェント判定
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize(); // 初回実行
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  let linkUrl = '';
+  if (typeof item.url === 'string') {
+    linkUrl = item.url;
+  } else {
+    linkUrl = isMobile ? item.url.sp : item.url.pc;
+  }
+
   const store = stores.find((s) => s.name === item.shop);
   const shopColor = store ? store.shopColor : '#ccc';
   const area = areas.find((a) => a.id === item.area);
@@ -31,7 +56,7 @@ export default function RankingCard({ item }: { item: RankingItem }) {
 
   return (
     <div className={styles.rankingCard}>
-      <ExternalLink href={item.url} className={styles.castLink} />
+      <ExternalLink href={linkUrl} className={styles.castLink} />
 
       <div className={styles.iconRank}>
         <Image

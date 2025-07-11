@@ -67,7 +67,7 @@ export const stores = [
     shopColor: '#3984FD',
   },
   {
-    name: 'ホットポイントヴィラ',
+    name: '京都ホットポイントヴィラ',
     area: 'kyoto',
     logo: '/images/logo/kt-villa.svg',
     phone: '075-213-1383',
@@ -93,10 +93,10 @@ export const stores = [
     shopColor: '#FE9AB6',
   },
   {
-    name: 'ホットポイントヴィラ',
+    name: '神戸ホットポイントヴィラ',
     area: 'kobe',
     logo: '/images/logo/kobe-villa.webp',
-    phone: '075-213-0588',
+    phone: '078-332-3666',
     url: 'http://www.hpg-kobe.jp/villa/',
     shopColor: '#CF8DE6',
   },
@@ -128,7 +128,7 @@ export const stores = [
     shopColor: '#EA524F',
   },
   {
-    name: 'ホットポイントヴィラ',
+    name: '熊本ホットポイントヴィラ',
     area: 'kumamoto',
     logo: '/images/logo/kumaoto-villa.svg',
     phone: '096-351-7500',

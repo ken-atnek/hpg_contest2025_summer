@@ -74,8 +74,8 @@ export default function ContainerRankingTabs() {
 
   const middleMaxRank = isMobile ? 6 : 7;
   const bottomMinRank = isMobile ? 7 : 8;
-  const bottomMaxRank = isMobile ? 16 : 16;
-  const underMinRank = isMobile ? 17 : 17;
+  const bottomMaxRank = isMobile ? 10 : 16;
+  const underMinRank = isMobile ? 13 : 17;
 
   const topRankItems = filterRanks(1, 1);
   const middleRankItems = filterRanks(2, middleMaxRank);
