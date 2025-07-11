@@ -45,7 +45,7 @@ const AreaSection = ({ area, stores }: AreaSectionProps) => (
     </h2>
     <ul className={styles.listShop}>
       {stores.map((store) => (
-        <StoreCard key={store.name} store={store} />
+        <StoreCard key={store.storeId} store={store} />
       ))}
     </ul>
   </article>

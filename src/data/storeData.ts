@@ -2,10 +2,11 @@
  * 店舗データ
  * URL:src/data/storeData.ts
  * Created: 2025-07-03
- * Last updated: 2025-07-03
+ * Last updated: 2025-07-11
  * ======================================= */
 
 export type Store = {
+  storeId: string;
   name: string;
   area: string;
   logo: string;
@@ -15,8 +16,9 @@ export type Store = {
 };
 
 export const stores = [
-  // yokohama
+  /* === [ 横浜エリア ] ================= */
   {
+    storeId: 'yh_club',
     name: 'クラブダンディ',
     area: 'yokohama',
     logo: '/images/logo/yokohama_club-dandy.svg',
@@ -25,6 +27,7 @@ export const stores = [
     shopColor: '#00B645',
   },
   {
+    storeId: 'yh_dandy',
     name: '横浜ダンディ',
     area: 'yokohama',
     logo: '/images/logo/yokohama_y-dandy.svg',
@@ -33,6 +36,7 @@ export const stores = [
     shopColor: '#FF2880',
   },
   {
+    storeId: 'yh_mr',
     name: 'ミスターダンディ',
     area: 'yokohama',
     logo: '/images/logo/yokohama_mr-dandy.svg',
@@ -41,8 +45,9 @@ export const stores = [
     shopColor: '#FE9800',
   },
 
-  // kyoto
+  /* === [ 京都エリア ] ================= */
   {
+    storeId: 'kt_hot',
     name: '京都ホットポイント',
     area: 'kyoto',
     logo: '/images/logo/kt-hot.svg',
@@ -51,6 +56,7 @@ export const stores = [
     shopColor: '#01D10B',
   },
   {
+    storeId: 'kt_part2',
     name: 'ホットポイントパート2',
     area: 'kyoto',
     logo: '/images/logo/kt-part2.svg',
@@ -59,6 +65,7 @@ export const stores = [
     shopColor: '#F5B484',
   },
   {
+    storeId: 'kt_lip',
     name: 'リップスティック',
     area: 'kyoto',
     logo: '/images/logo/kt-lip.svg',
@@ -67,7 +74,8 @@ export const stores = [
     shopColor: '#3984FD',
   },
   {
-    name: '京都ホットポイントヴィラ',
+    storeId: 'kt_villa',
+    name: 'ホットポイントヴィラ',
     area: 'kyoto',
     logo: '/images/logo/kt-villa.svg',
     phone: '075-213-1383',
@@ -75,8 +83,9 @@ export const stores = [
     shopColor: '#FF2103',
   },
 
-  // kobe
+  /* === [ 神戸エリア ] ================= */
   {
+    storeId: 'kb_hot',
     name: '神戸ホットポイント',
     area: 'kobe',
     logo: '/images/logo/kobe-hot.webp',
@@ -85,6 +94,7 @@ export const stores = [
     shopColor: '#D9C796',
   },
   {
+    storeId: 'kb_style',
     name: 'ホットポイントスタイル',
     area: 'kobe',
     logo: '/images/logo/kobe-style.webp',
@@ -93,7 +103,8 @@ export const stores = [
     shopColor: '#FE9AB6',
   },
   {
-    name: '神戸ホットポイントヴィラ',
+    storeId: 'kb_villa',
+    name: 'ホットポイントヴィラ',
     area: 'kobe',
     logo: '/images/logo/kobe-villa.webp',
     phone: '078-332-3666',
@@ -101,8 +112,9 @@ export const stores = [
     shopColor: '#CF8DE6',
   },
 
-  // fukuoka
+  /* === [ 福岡エリア ] ================= */
   {
+    storeId: 'fu_hot',
     name: '福岡ホットポイント',
     area: 'fukuoka',
     logo: '/images/logo/fukuoka.webp',
@@ -111,15 +123,17 @@ export const stores = [
     shopColor: '#00AFD1',
   },
   {
-    name: '福岡ホットポイントヴィラ',
+    storeId: 'fu_villa',
+    name: 'ホットポイントヴィラ',
     area: 'fukuoka',
     logo: '/images/logo/fukuoka-villa.svg',
     phone: '092-262-5002',
     url: 'https://www.fukuoka-hotpoint.jp/villa/top.html',
     shopColor: '#B6659F',
   },
-  // kumamoto
+  /* === [ 熊本エリア ] ================= */
   {
+    storeId: 'km_hot',
     name: '熊本ホットポイント',
     area: 'kumamoto',
     logo: '/images/logo/kumaoto-hot.svg',
@@ -128,7 +142,8 @@ export const stores = [
     shopColor: '#EA524F',
   },
   {
-    name: '熊本ホットポイントヴィラ',
+    storeId: 'km_villa',
+    name: 'ホットポイントヴィラ',
     area: 'kumamoto',
     logo: '/images/logo/kumaoto-villa.svg',
     phone: '096-351-7500',

@@ -6,53 +6,66 @@
  * Last updated: 2025-07-04
  * ======================================= */
 'use client';
+
 import { RankingItem } from '@/data/rankingData';
-import styles from '@/styles/top.module.scss';
-import Image from 'next/image';
-import ExternalLink from '@/components/common/ExternalLink';
+import { castData } from '@/data/castData';
 import { stores } from '@/data/storeData';
 import { areas } from '@/data/areaData';
+import ExternalLink from '@/components/common/ExternalLink';
+import Image from 'next/image';
+import styles from '@/styles/top.module.scss';
 import { useEffect, useState } from 'react';
-const blackTextShops = [
-  '神戸ホットポイント',
-  'クラブダンディ',
-  '福岡ホットポイント',
-  '京都ホットポイント',
-  'ホットポイントパート2',
-  '熊本ホットポイントヴィラ',
-];
 
 export default function RankingCard({ item }: { item: RankingItem }) {
-  // ユーザーエージェント判定
+  // モバイル判定
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-
-    handleResize(); // 初回実行
+    handleResize();
     window.addEventListener('resize', handleResize);
-
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  let linkUrl = '';
-  if (typeof item.url === 'string') {
-    linkUrl = item.url;
-  } else {
-    linkUrl = isMobile ? item.url.sp : item.url.pc;
+  // ① castId からキャスト情報を取得
+  const cast = castData.find((c) => c.castId === item.castId);
+  if (!cast) {
+    return null;
   }
 
-  const store = stores.find((s) => s.name === item.shop);
-  const shopColor = store ? store.shopColor : '#ccc';
-  const area = areas.find((a) => a.id === item.area);
-  const areaTitleImage = area ? area.titleImage : '';
+  // ② storeId から店舗情報を取得
+  const store = stores.find((s) => s.storeId === cast.storeId);
+  const shopColor = store?.shopColor || '#ccc';
+
+  // ③ areaId からエリア情報を取得
+  const area = areas.find((a) => a.id === store?.area);
+  const areaTitleImage = area?.titleImage || '';
+
+  // ④ URL判定
+  let linkUrl = '';
+  if (typeof cast.url === 'string') {
+    linkUrl = cast.url;
+  } else {
+    linkUrl = isMobile ? cast.url.sp : cast.url.pc;
+  }
+
+  // ⑤ rank表示
   const rankNum = String(item.rank).padStart(2, '0');
 
-  const isBlackTextShop = blackTextShops.includes(item.shop);
+  // ⑥ 黒テキスト対応
+  const blackTextStoreIds = [
+    'kb_hot',
+    'club_dandy',
+    'fu_hot',
+    'kt_hot',
+    'hot_point_2',
+    'km_villa',
+  ];
+  const isBlackTextShop = blackTextStoreIds.includes(store?.storeId ?? '');
 
   return (
     <div className={styles.rankingCard}>
@@ -75,27 +88,32 @@ export default function RankingCard({ item }: { item: RankingItem }) {
           {areaTitleImage && (
             <Image
               src={areaTitleImage}
-              alt={item.area}
+              alt={store?.name ?? 'store'}
               width={40}
               height={40}
               className={styles.itemAreaImage}
             />
           )}
-          {area ? area.nameJp : item.area}
+          {area?.nameJp ?? store?.area}
         </span>
-        <span className={styles.shop}>{item.shop}</span>
+        <span className={styles.shop}>{store?.name}</span>
       </div>
 
       <div className={styles.boxCast}>
         <div className={styles.itemImage}>
-          <Image src={item.image} alt={item.name} width={400} height={600} />
+          <Image
+            src={cast.image}
+            alt={cast.name ?? 'cast'}
+            width={400}
+            height={600}
+          />
         </div>
         <div className={styles.wrapProfile}>
           <div className={styles.shopLogo}>
             {store?.logo && (
               <Image
                 src={store.logo}
-                alt={item.shop}
+                alt={store.name}
                 width={160}
                 height={0}
                 sizes="100vw"
@@ -103,8 +121,8 @@ export default function RankingCard({ item }: { item: RankingItem }) {
               />
             )}
           </div>
-          <div className={styles.castName}>{item.name}</div>
-          <div className={styles.castSize}>{item.size}</div>
+          <div className={styles.castName}>{cast.name}</div>
+          <div className={styles.castSize}>{cast.size}</div>
         </div>
       </div>
     </div>
