@@ -18,7 +18,6 @@
     flex-direction: column;
     align-items: center;
     padding: 1em 2em;
-    --stage-color: #ff9030;
     @include sp {
         padding: 6vw 4vw;
     }
@@ -60,30 +59,31 @@
             font-size: FZ(48);
         }
     }
-    h2 {
-        font-size: FZ(40);
-        font-weight: 700;
-        color: var(--stage-color);
-        margin-top: 0.2em;
-    }
-    .period {
-        font-size: FZ(24);
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        display: flex;
-        align-content: center;
-        margin-top: 0.5em;
-        @include sp {
-            font-size: FZ(18);
-        }
-        time {
-            &:first-of-type {
-                &::after {
-                    content: "〜";
-                }
-            }
-        }
-    }
+
+    // h2 {
+    //     font-size: FZ(40);
+    //     font-weight: 700;
+    //     color: var(--stage-color);
+    //     margin-top: 0.2em;
+    // }
+    // .period {
+    //     font-size: FZ(24);
+    //     font-weight: 700;
+    //     letter-spacing: 0.2em;
+    //     display: flex;
+    //     align-content: center;
+    //     margin-top: 0.5em;
+    //     @include sp {
+    //         font-size: FZ(18);
+    //     }
+    //     time {
+    //         &:first-of-type {
+    //             &::after {
+    //                 content: "〜";
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 /* =================================
@@ -98,6 +98,30 @@
     font-size: inherit;
     @include sp {
         padding: 0 4vw 12vw;
+    }
+    h2 {
+        font-size: FZ(40);
+        font-weight: 700;
+        margin-top: 0.2em;
+    }
+    .period {
+        font-size: FZ(24);
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        display: flex;
+        align-content: center;
+        margin-top: 0.5em;
+        margin-bottom: 1.4em;
+        @include sp {
+            font-size: FZ(18);
+        }
+        time {
+            &:first-of-type {
+                &::after {
+                    content: "〜";
+                }
+            }
+        }
     }
     .tabs {
         position: relative;
@@ -201,7 +225,8 @@
                     }
                 }
                 &:nth-of-type(2) {
-                    --rankColor: #595959;
+                    --rankColor: #3eab20;
+                    color: $base-white;
                 }
                 &:nth-of-type(3) {
                     --rankColor: #4f4f4f;

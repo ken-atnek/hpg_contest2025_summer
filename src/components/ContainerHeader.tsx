@@ -19,12 +19,12 @@ const ContainerHeader = () => {
         />
       </h1>
       <p className={styles.head}>結果発表</p>
-      <h2>ファーストステージ</h2>
+      {/* <h2>セカンドステージ</h2>
       <div className={styles.period}>
         集計期間：
-        <time dateTime="2025-07-01">2025年7月1日</time>
-        <time dateTime="2025-07-10">7月10日</time>
-      </div>
+        <time dateTime="2025-07-11">2025年7月11日</time>
+        <time dateTime="2025-07-20">7月20日</time>
+      </div> */}
     </header>
   );
 };

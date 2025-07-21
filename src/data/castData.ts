@@ -56,6 +56,16 @@ export const castData = [
     },
     image: '/images/cast/yh_mr_rin.webp',
   },
+  {
+    castId: 'yh_club_honon',
+    storeId: 'yh_club',
+    name: '大空ほのん',
+    url: {
+      pc: 'https://www.dandy-g.jp/club_dandy/detail.php?g_id=6891',
+      sp: 'https://www.dandy-g.jp/sp/club_dandy/g_info_sp.php?g_id=6891',
+    },
+    image: '/images/cast/yh_club_honon.webp',
+  },
 
   /* === [ 京都エリア ] ================= */
   {
@@ -71,6 +81,27 @@ export const castData = [
     name: '南 おりな',
     url: 'https://www.hot-point.co.jp/hot/girls_info.php?g_id=6737',
     image: '/images/cast/kt_hot_orina.webp',
+  },
+  {
+    castId: 'kt_part2_mai',
+    storeId: 'kt_part2',
+    name: '木南 まい',
+    url: 'https://www.hot-point.co.jp/hot2/girls_info.php?g_id=7208',
+    image: '/images/cast/kt_part2_mai.webp',
+  },
+  {
+    castId: 'kt_part2_sakura',
+    storeId: 'kt_part2',
+    name: 'はるなさくら',
+    url: 'https://www.hot-point.co.jp/hot2/girls_info.php?g_id=5760',
+    image: '/images/cast/kt_part2_sakura.webp',
+  },
+  {
+    castId: 'kt_part2_rika',
+    storeId: 'kt_part2',
+    name: '加藤 りか',
+    url: 'https://www.hot-point.co.jp/hot2/girls_info.php?g_id=7650',
+    image: '/images/cast/kt_part2_rika.webp',
   },
   {
     castId: 'kt_lip_momoka',
@@ -104,6 +135,13 @@ export const castData = [
   },
   /* === [ 福岡エリア ] ================= */
   {
+    castId: 'fu_hot_arisu',
+    storeId: 'fu_hot',
+    name: '星乃アリス',
+    url: 'https://www.fukuoka-hotpoint.jp/hot/g-info.php?g_id=6664',
+    image: '/images/cast/fu_hot_arisu.webp',
+  },
+  {
     castId: 'fu_villa_kana',
     storeId: 'fu_villa',
     name: '宝生 かな',
@@ -118,6 +156,13 @@ export const castData = [
     url: 'https://www.fukuoka-hotpoint.jp/villa/g-info.php?g_id=6371&ls=glist',
     image: '/images/cast/fu_villa_ren.webp',
   },
+  {
+    castId: 'fu_villa_hikaru',
+    storeId: 'fu_villa',
+    name: '水野ひかる',
+    url: 'https://www.fukuoka-hotpoint.jp/villa/g-info.php?g_id=5896',
+    image: '/images/cast/fu_villa_hikaru.webp',
+  },
   /* === [ 熊本エリア ] ================= */
   {
     castId: 'km_hot_ran',
@@ -130,14 +175,14 @@ export const castData = [
     castId: 'km_hot_sara',
     storeId: 'km_hot',
     name: 'サラ',
-    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=173&is_Area=no&s_dir=hot&mode=slink&link_Source=stop_rk&log=1626519419',
+    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=173',
     image: '/images/cast/km_hot_sara.webp',
   },
   {
     castId: 'km_hot_mio',
     storeId: 'km_hot',
     name: '星川★美桜',
-    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=467&is_Area=no&s_dir=hot&mode=slink&link_Source=glist',
+    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=467',
     image: '/images/cast/km_hot_mio.webp',
   },
   {
@@ -151,15 +196,22 @@ export const castData = [
     castId: 'km_hot_anri',
     storeId: 'km_hot',
     name: '神埼あんり',
-    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=176&is_Area=no&s_dir=hot&mode=slink&link_Source=glist',
+    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=176',
     image: '/images/cast/km_hot_anri.webp',
   },
   {
     castId: 'km_hot_erena',
     storeId: 'km_hot',
     name: '逢坂えれな',
-    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=466&is_Area=no&s_dir=hot&mode=slink&link_Source=glist',
+    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=466',
     image: '/images/cast/km_hot_erena.webp',
+  },
+  {
+    castId: 'km_hot_saya',
+    storeId: 'km_hot',
+    name: '坂下 さや',
+    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=171',
+    image: '/images/cast/km_hot_saya.webp',
   },
 
   {
@@ -176,5 +228,19 @@ export const castData = [
     name: '神代くれな',
     url: 'https://www.hotpoint-villa.cc/detail.php?g_id=546',
     image: '/images/cast/km_villa_kurena.webp',
+  },
+  {
+    castId: 'km_villa_riho',
+    storeId: 'km_villa',
+    name: 'りほ',
+    url: 'https://www.hotpoint-villa.cc/detail.php?g_id=522',
+    image: '/images/cast/km_villa_riho.webp',
+  },
+  {
+    castId: 'km_villa_hana',
+    storeId: 'km_villa',
+    name: '白咲 はな',
+    url: 'https://www.hotpoint-villa.cc/detail.php?g_id=6',
+    image: '/images/cast/km_villa_hana.webp',
   },
 ];
