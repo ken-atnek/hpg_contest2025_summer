@@ -65,6 +65,6 @@ export const rankingData: Record<string, RankingItem[]> = {
     { id: 17, rank: 17, castId: 'yh_mr_rin' },
     { id: 18, rank: 18, castId: 'yh_club_honon' },
     { id: 19, rank: 19, castId: 'kt_part2_sakura' },
-    { id: 20, rank: 20, castId: 'kt_part2_rika' },
+    { id: 20, rank: 20, castId: 'yh_dandy_hinano' },
   ],
 };

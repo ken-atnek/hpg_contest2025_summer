@@ -37,6 +37,16 @@ export const castData = [
     image: '/images/cast/yh_dandy_niko.webp',
   },
   {
+    castId: 'yh_dandy_hinano',
+    storeId: 'yh_dandy',
+    name: '姫柊 ひなの',
+    url: {
+      pc: 'https://www.dandy-g.jp/dandy/detail.php?g_id=7207',
+      sp: 'https://www.dandy-g.jp/sp/dandy/g_info_sp.php?g_id=7207',
+    },
+    image: '/images/cast/yh_dandy_hinano.webp',
+  },
+  {
     castId: 'yh_mr_nina',
     storeId: 'yh_mr',
     name: '山下 にな',
