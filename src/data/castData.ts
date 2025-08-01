@@ -223,6 +223,13 @@ export const castData = [
     url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=171',
     image: '/images/cast/km_hot_saya.webp',
   },
+  {
+    castId: 'km_hot_rui',
+    storeId: 'km_hot',
+    name: '加藤 るい',
+    url: 'https://www.kumamoto-hotpoint.cc/detail.php?g_id=448',
+    image: '/images/cast/km_hot_rui.webp',
+  },
 
   {
     castId: 'km_villa_sena',
