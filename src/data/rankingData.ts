@@ -92,6 +92,6 @@ export const rankingData: Record<string, RankingItem[]> = {
     { id: 17, rank: 17, castId: 'kt_lip_aina' },
     { id: 18, rank: 18, castId: 'km_hot_erena' },
     { id: 19, rank: 19, castId: 'km_villa_hana' },
-    { id: 20, rank: 20, castId: 'fu_villa_hikaru' },
+    { id: 20, rank: 20, castId: 'yh_mr_nina' },
   ],
 };
