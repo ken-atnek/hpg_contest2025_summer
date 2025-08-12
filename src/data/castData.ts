@@ -143,6 +143,13 @@ export const castData = [
     url: 'https://www.hpg-kobe.jp/hot/model_profile759.html',
     image: '/images/cast/kb_hot_kazuha.webp',
   },
+  {
+    castId: 'kb_hot_rion',
+    storeId: 'kb_hot',
+    name: '野崎 りおん',
+    url: 'https://www.hpg-kobe.jp/hot/model_profile685.html',
+    image: '/images/cast/kb_hot_rion.webp',
+  },
   /* === [ 福岡エリア ] ================= */
   {
     castId: 'fu_hot_arisu',
@@ -152,12 +159,19 @@ export const castData = [
     image: '/images/cast/fu_hot_arisu.webp',
   },
   {
+    castId: 'fu_hot_koume',
+    storeId: 'fu_hot',
+    name: '春風 こうめ',
+    url: 'https://www.fukuoka-hotpoint.jp/hot/g-info.php?g_id=6079',
+    image: '/images/cast/fu_hot_koume.webp',
+  },
+  {
     castId: 'fu_villa_kana',
     storeId: 'fu_villa',
     name: '宝生 かな',
     url: 'https://www.fukuoka-hotpoint.jp/villa/g-info.php?g_id=4368&ls=glist',
     image: '/images/cast/fu_villa_kana.webp',
-    size: 'Age.35 / T.158 / B.84 [D] / W.56 / H.85',
+    // size: 'Age.35 / T.158 / B.84 [D] / W.56 / H.85',
   },
   {
     castId: 'fu_villa_ren',
@@ -259,5 +273,12 @@ export const castData = [
     name: '白咲 はな',
     url: 'https://www.hotpoint-villa.cc/detail.php?g_id=6',
     image: '/images/cast/km_villa_hana.webp',
+  },
+  {
+    castId: 'km_villa_madoka',
+    storeId: 'km_villa',
+    name: '望月 まどか',
+    url: 'https://www.hotpoint-villa.cc/detail.php?g_id=425',
+    image: '/images/cast/km_villa_madoka.webp',
   },
 ];

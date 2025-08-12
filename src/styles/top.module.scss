@@ -233,7 +233,8 @@
                     color: $base-white;
                 }
                 &:nth-of-type(4) {
-                    --rankColor: #454545;
+                    --rankColor: #ac30ff;
+                    color: $base-white;
                 }
                 &:last-of-type {
                     button {
@@ -466,7 +467,7 @@
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
                     @include sp {
-                        font-size: FZ(48);
+                        font-size: FZ(42);
                     }
                 }
                 .castSize {

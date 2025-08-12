@@ -53,7 +53,7 @@ const stages = [
     startDate: '2025-08-01',
     endDate: '2025-08-10',
     textPeriod: '開催',
-    disabled: true,
+    disabled: false,
     title: 'フォースステージ',
   },
   {
@@ -69,7 +69,7 @@ const stages = [
 ];
 
 export default function ContainerRankingTabs() {
-  const [activeStage, setActiveStage] = useState('third');
+  const [activeStage, setActiveStage] = useState('fourth');
   const items = rankingData[activeStage] ?? [];
 
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
