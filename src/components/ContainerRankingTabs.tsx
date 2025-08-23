@@ -17,45 +17,59 @@ const stages = [
     label: '1',
     text: 'st',
     period: '7/1-10',
-
+    startDate: '2025-07-01',
+    endDate: '2025-07-10',
     textPeriod: '開催',
     disabled: false,
+    title: 'ファーストステージ',
   },
   {
     id: 'second',
     label: '2',
     text: 'nd',
     period: '7/11-20',
+    startDate: '2025-07-11',
+    endDate: '2025-07-20',
     textPeriod: '開催',
-    disabled: true,
+    disabled: false,
+    title: 'セカンドステージ',
   },
   {
     id: 'third',
     label: '3',
     text: 'rd',
     period: '7/21-31',
+    startDate: '2025-07-21',
+    endDate: '2025-07-31',
     textPeriod: '開催',
-    disabled: true,
+    disabled: false,
+    title: 'サードステージ',
   },
   {
     id: 'fourth',
     label: '4',
     text: 'th',
     period: '8/1-10',
+    startDate: '2025-08-01',
+    endDate: '2025-08-10',
     textPeriod: '開催',
-    disabled: true,
+    disabled: false,
+    title: 'フォースステージ',
   },
   {
     id: 'final',
     label: 'FINAL',
     period: '8/11-31',
+    startDate: '2025-08-11',
+    endDate: '2025-08-31',
     textPeriod: '開催',
     disabled: true,
+    title: 'ファイナルステージ',
   },
 ];
 
 export default function ContainerRankingTabs() {
-  const [activeStage, setActiveStage] = useState('first');
+  const [activeStage, setActiveStage] = useState('fourth');
   const items = rankingData[activeStage] ?? [];
 
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
@@ -81,8 +95,28 @@ export default function ContainerRankingTabs() {
   const middleRankItems = filterRanks(2, middleMaxRank);
   const bottomRankItems = filterRanks(bottomMinRank, bottomMaxRank);
   const underRankItems = filterRanks(underMinRank, 20);
+
+  const currentStage = stages.find((stage) => stage.id === activeStage);
+
   return (
     <section className={styles.containerRankingTabs}>
+      <h2>{currentStage?.title}</h2>
+      <div className={styles.period}>
+        集計期間：
+        <time dateTime={currentStage?.startDate}>
+          {new Date(currentStage?.startDate ?? '').toLocaleDateString('ja-JP', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+        <time dateTime={currentStage?.endDate}>
+          {new Date(currentStage?.endDate ?? '').toLocaleDateString('ja-JP', {
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+      </div>
       <nav className={styles.tabs}>
         <ul>
           {stages.map((stage) => (

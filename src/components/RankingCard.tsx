@@ -67,6 +67,9 @@ export default function RankingCard({ item }: { item: RankingItem }) {
   ];
   const isBlackTextShop = blackTextStoreIds.includes(store?.storeId ?? '');
 
+  // サイズテキスト
+  const sizeText = item.size;
+
   return (
     <div className={styles.rankingCard}>
       <ExternalLink href={linkUrl} className={styles.castLink} />
@@ -122,7 +125,7 @@ export default function RankingCard({ item }: { item: RankingItem }) {
             )}
           </div>
           <div className={styles.castName}>{cast.name}</div>
-          <div className={styles.castSize}>{cast.size}</div>
+          {sizeText && <div className={styles.castSize}>{sizeText}</div>}
         </div>
       </div>
     </div>

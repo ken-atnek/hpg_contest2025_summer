@@ -25,7 +25,12 @@ const metadataBase = isRealProduction
         'https://contest2025-summer.hot-point.jp/'
     )
   : undefined;
-
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: 'no',
+};
 export const metadata: Metadata = {
   ...(isRealProduction && {
     metadataBase,
@@ -47,6 +52,7 @@ export const metadata: Metadata = {
     ? 'ホットポイントグループ指名獲得サマーチャレンジ夏の陣'
     : undefined,
   robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
+
   icons: {
     icon: [
       { url: 'favicon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -71,16 +77,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className={`${notoSans.className} `}>
+    <html lang="ja" className={`${notoSans.className}`}>
       <head>
-        <meta
-          name="robots"
-          content={isRealProduction ? 'index, follow' : 'noindex, nofollow'}
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-        />
         <meta
           name="format-detection"
           content="telephone=no, address=no, email=no"
